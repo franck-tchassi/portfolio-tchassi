@@ -1,0 +1,226 @@
+@import '../../styles/mixins.scss';
+
+.accueil{
+    margin-top:    4rem;
+    background-image: url('/src/assets/banner.webp');
+    min-height: 94vh;
+    background-repeat: round;
+    &_container{
+        display: grid;
+        justify-content: center;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+        //gap: 4rem;
+        @include respond(phone){
+        
+            grid-template-columns: 1fr;
+                
+        }
+
+    }
+
+    &_left{
+        padding-block: 5rem;
+        padding: 0px 35px;
+        .cursor{
+            display: inline-block;
+           font-size: 55px;
+            animation: opac 1s infinite;
+            @include respond(phone){
+                font-size: 35px;
+                padding: 0px 55px;
+            }
+        }
+        @include respond(phone){
+            padding-block: 5rem;
+            
+        }
+    }
+    
+
+    h3{
+    
+        font-size: 2rem;
+        font-weight: 700;
+        @include respond(phone){
+            font-size: 1rem;
+            font-weight: 500;
+        }
+    }
+
+    h2{
+        
+        font-size: 2.5rem;
+        font-weight: 700;
+        line-height: 1;
+
+        @include respond(phone){
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+    }
+
+    &_right{
+        overflow: hidden;
+        position: relative;
+    }
+
+    &_right-img{
+        //display: grid;
+    }
+
+    
+    .boule{
+        background-image: url("/src/assets/la-terre-de-planète.webp");
+        width: 124px;
+        height: 124px;
+        background-size: cover;
+        border-radius: 50%;
+        animation: spin 3s linear infinite;
+        position: relative;
+        left: 1px;
+        @include respond(phone){
+            width: 64px;
+            height: 64px;
+        }
+        
+    }
+    
+    
+    
+    .hiboux{
+            background-image: url('/src/assets/hibou.webp');
+            
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 200px; 
+            height: 200px;
+            background-size: 50%; /* Reduce background size to 50% of its original size */
+            background-repeat: no-repeat;
+            position: relative;
+            top: 244px;
+            right: -182px;
+            @include respond(phone){
+                width: 100px; 
+                height: 200px;
+                top: 344px;
+                right: -192px;
+            }
+            .hibou-eye-left{
+                position: relative;
+                top: -62px;
+                left: -56px;
+                background-image: url('/src/assets/hibou11.webp');
+                width: 25px; 
+                height: 25px; 
+                border-radius: 80%;
+                background-size: cover;
+                animation: hibou 4s infinite;
+                @include respond(phone){
+                    width: 12px; 
+                    height: 12px;
+                    top: -81px;
+                    left: -28px;
+                }
+            }
+            .hibou-eye-right{
+                position: relative;
+                top: -62px;
+                left: -43px;
+                background-image: url('/src/assets/hibou12.webp');
+                width: 25px;
+                height: 25px;
+                background-size: 20%;
+                border-radius: 80%;
+                background-size: cover;
+                animation: hibou 4s infinite;
+                @include respond(phone){
+                    width: 12px; 
+                    height: 12px;
+                    top: -81px;
+                    left: -21px;
+                }
+                
+            }
+    }
+    .brille1{
+        background-image: url("/src/assets/brille2.webp");
+        width: 124px;
+        height: 124px;
+        background-size: cover;
+        border-radius: 50%;
+        animation: spin 3s linear infinite;
+        position: relative;
+        left: 496px;
+        @include respond(phone){
+            left: 189px;
+            top: -264px;
+        }
+    }
+    .brille2{
+        background-image: url("/src/assets/brille1.webp");
+        width: 124px;
+        height: 124px;
+        background-size: cover;
+        border-radius: 50%;
+        animation: spin 3s linear infinite;
+        position: relative;
+        left: 496px;
+        top: -456px;
+        @include respond(phone){
+            left: 49px;
+            top: -245px;
+        }
+        
+    }
+    
+    
+    
+    
+}
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes move {
+    from {
+        right: 0;
+    }
+    to {
+        left: -100%;
+    }
+}
+
+@keyframes blink {
+    0%, 20%, 60%, 100% {
+        background-image: url("/src/assets/eye.webp");
+        transform: scaleY(1);
+    }
+    30%, 50% {
+        background-color: white;
+        transform: scaleY(0.1);
+        
+    }
+}
+@keyframes hibou {
+    0%, 20%, 60%, 100% {
+        transform: scaleY(1);
+    }
+    30%, 50% {
+        transform: scaleY(0);
+        
+    }
+}
+@keyframes opac{
+    0%, 50% {
+        opacity: 1;
+    }
+    50%, 100% {
+        opacity: 0;
+    }
+}
