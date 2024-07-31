@@ -1,0 +1,42 @@
+@import '../../styles/mixins.scss';
+
+.services{
+
+    &_container{
+        display: grid;
+        grid-template-columns: repeat(3, minmax(19rem, 1fr));
+        align-items: center;
+        gap: 2rem;
+
+        @include respond(tab-land){
+            grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+        }
+    }
+    &_card{
+        padding: 50px 30px;
+        border-radius: 3px;
+        text-align: center;
+        border: 1px solid #232935;
+        background-color: var(--eerie-black);
+        cursor: pointer;
+    }
+    
+    h2{
+        font-size: 20px;
+        font-weight: 400;
+        margin-block: 2rem 1rem;
+    }
+    &_card-icone{
+        width: fit-content;
+        margin-inline: auto;
+        padding: 1.2rem;
+        border: 1px solid  var(--extra-color);
+        border-radius: 50%;
+        background-color: var(--main-color);
+
+        .s_icons{
+            font-size: 3rem;
+            color: var(--extra-color);
+        }
+    }
+}
