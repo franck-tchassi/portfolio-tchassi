@@ -1,0 +1,105 @@
+@import '../../styles/mixins.scss';
+
+.contact{
+    
+    &_container-title{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 45px;
+        
+        h4{
+            font-size: 29px;
+            font-weight:400;
+            padding: 23px;
+        }
+    }
+
+    &_container{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+
+        @include respond(tab-port){
+            grid-template-columns: 1fr;
+            gap: 4rem;
+        }
+        h3{
+            font-size: 25px;
+            font-weight:400;
+            margin-bottom: 22px;
+        }
+        
+    }
+    &_info{
+        margin-top: 20 px;
+        display: flex;
+        flex-direction: column;
+        gap: 1.8rem;
+
+        &-mail{
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            .icon-email{
+                padding: 14px;
+                border: 0.5px solid var(--arsenic);
+                border-radius: 50%;
+                .icon{
+                    width: 1.5rem;
+                    font-size: 22px;
+                }
+            }
+        }
+        &-phone{
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            .icon-phone{
+                padding: 14px;
+                border: 0.5px solid var(--arsenic);
+                border-radius: 50%;
+                .icon{
+                    width: 1.5rem;
+                    font-size: 22px;
+                }
+            }
+        }
+    }
+    &_left{
+        form{
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            align-items: flex-star;
+            input, textarea{
+                display: block;
+                width: 100%;
+                padding: 12px 20px;
+                color: var(--m-silver);
+                border: 1px solid #232935;
+                background-color: var(--eerie-black);
+                height: 52px;
+                border-radius: 7px;
+                font-family: "Inter", sans-serif;
+                font-size: 15px;
+
+                &::placeholder{
+                    font-size: 15px;
+                    font-family: "Inter", sans-serif;
+                }
+                &:focus:invalid{
+                    border: 1px solid var(--extra-color);
+                    //background-color: red;
+                }
+            }
+            textarea{
+                height: 100%;
+            }
+            .btn{
+                cursor: pointer;
+            }
+        }
+    }
+    
+}
