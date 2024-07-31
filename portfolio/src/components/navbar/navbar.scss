@@ -1,0 +1,84 @@
+@import '../../styles/mixins.scss';
+
+.navbar{
+    background-color: #070d1be6;
+    padding-block: 1.2rem;
+    position: fixed;
+    z-index:900 ;
+    width: 100%;
+    top: 0;
+    left: 0;
+
+    &_container{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &_logo{
+        color: #fff;
+        width: 100%;
+    }
+
+    &_links{
+        display: flex;
+        align-items: center;
+    }
+    .icon{
+        font-size: 34px;
+    }
+
+    ul{
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+
+        @include respond(tab-port){
+            flex-direction: column;
+            gap: 1.2rem;
+            align-items: flex-start;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            padding: 2rem;
+            background-color: #070d1be6;
+            width: 100%;
+            border-top: 1px solid var(--m-silver);
+
+            display: none;
+        }
+    }
+
+    a{
+        text-transform: uppercase;
+        color: var(--main-white);
+        font-weight: 500;
+        font-family: "Roboto", sans-serif;
+        transition: all 0.3s ease;
+
+        &:hover{
+            color: var(--m-silver);
+        }
+
+        @include respond(tab-port){
+            font-weight: 400;
+            text-transform: capitalize;
+            color: var(--m-silver);
+        }
+    }
+
+    &_menu {
+        display: none;
+
+        @include respond(tab-port){
+            display: inline-block;
+            font-size: 2.3rem;
+            color: var(--m-silver);
+        }
+    }
+
+    .show{
+        display: flex !important;
+    }
+
+}
