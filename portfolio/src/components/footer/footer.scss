@@ -1,0 +1,35 @@
+@import '../../styles/mixins.scss';
+
+.footer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #070d1be6;
+    gap: 5px;
+    padding: 1.875rem 0;
+    &_link{
+        display: flex;
+        align-items: center;
+
+        a .link{
+            border: 1.5px solid var(--extra-color);
+            color: var(--extra-color);
+            width: 37px;
+            height: 37px;
+            margin-right: 0.625rem;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: 0.3s;
+            padding: 5px;
+            &:hover{
+                color: black;
+                background-color: white;
+                border: 1.5px solid white;
+            }
+        }
+    }
+    p{
+        color: white;
+    }
+}
