@@ -1,0 +1,41 @@
+@import '../../styles/mixins.scss';
+
+.presentation{
+    &_container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 62px;
+        P{ 
+            font-size: 1.0625rem;
+            @include respond(phone){
+                font-size:  0.95rem;
+            }
+              
+        }
+    }
+    &_link{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        a .link{
+            border: 1.5px solid var(--extra-color);
+            color: var(--extra-color);
+            width: 37px;
+            height: 37px;
+            margin-right: 0.625rem;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: 0.3s;
+            padding: 5px;
+            &:hover{
+                color: black;
+                background-color: white;
+                border: 1.5px solid white;
+            }
+        }
+        
+    }
+}
