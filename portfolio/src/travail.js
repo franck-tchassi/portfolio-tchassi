@@ -38,8 +38,8 @@ export const travaux = [
     {
         id:"2",
         title: "Développement du back-end d'un site de notation de livres",
-        description: "J'ai développé le back-end d'un site web de notation de livres, permettant aux utilisateurs de créer des comptes, d'ajouter des livres, et de laisser des évaluations détaillées. Le site offre une gestion complète des utilisateurs, des livres, et des notes grâce à une API RESTful robuste construite avec Node.js et Express. L'intégration de MongoDB assure une gestion efficace des données, tandis que les fonctionnalités d'authentification sécurisée garantissent la protection des informations des utilisateurs. Ce projet démontre mon expertise en développement back-end, gestion de bases de données et création d'API RESTful.",
-        tags: ["Node.js", "Express.js", "MongoDB", "API REST", "Back-End"],
+        description: "J'ai développé le back-end d'un site web de notation de livres, permettant aux utilisateurs de créer des comptes, d'ajouter des livres, et de laisser des évaluations détaillées. Le site offre une gestion complète des utilisateurs, des livres, et des notes grâce à une API RESTful robuste construite avec Node.js et Express.",
+        tags: ["Node.js", "Express.js", "MongoDB", "API REST"],
         pictures: [
            gremoire1,
            gremoire2,
