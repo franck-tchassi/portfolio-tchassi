@@ -15,20 +15,11 @@ const Contact = () => {
     const [isCopy, setIsCopy] = useState(false);
     const [userEmail, setUserEmail] = useState('');
     const [userName, setUserName] = useState('');
+    const [message, setMessage] = useState('');
     const form = useRef()
     const my_email = "franckraulin8@gmail.com"
-
-    const copyMail = ()=>{
-      navigator.clipboard.writeText(my_email)
-      setIsCopy(!isCopy)
-
-      toast.success("email copiée")
-
-     // setTimeout(() => {
-       // setIsCopy(false);
-      //}, 2000)
-    }
-   
+    
+    
     
     const sendEmail = (e)=>{
         e.preventDefault();
@@ -36,6 +27,11 @@ const Contact = () => {
         emailjs.sendForm('service_bg7p3ca', 'template_zh93hoj', form.current,  'QkqavOvl7wMJiu6jF')
         .then(()=> {
           toast.success("message envoyé")
+
+          //vider le formulaire
+          setUserName('')
+          setUserEmail('') 
+          setMessage('')
         },
         (error)=>{
           toast.error("erreur d'envoie")
@@ -63,7 +59,7 @@ const Contact = () => {
           <form  ref={form} onSubmit={sendEmail}>
             <input type='text' name='user_name' aria-label="Nom" placeholder='Nom' required value={userName} onChange={(e)=> setUserName(e.target.value)}/>
             <input type='email' name='user_email' aria-label="Adresse e-mail" placeholder='Adresse e-mail' required value={userEmail} onChange={(e)=> setUserEmail(e.target.value)}/>
-            <textarea name='message' cols={30} rows={10} className='form-message' aria-label="Votre message" placeholder='Votre message' required/>
+            <textarea name='message' cols={30} rows={10} className='form-message' aria-label="Votre message" placeholder='Votre message' required value={message} onChange={(e)=> setMessage(e.target.value)}/>
             <button type='submit' className='btn'>ME CONTACTER</button>
           </form>
         </div>
